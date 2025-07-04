@@ -63,7 +63,7 @@ function App() {
         setShowCongrats(true); // Show popup
         // Optionally store token: localStorage.setItem('token', data.token);
         // Open WhatsApp chat (replace with your desired number)
-        window.open('https://wa.me/917339125472', '_blank');
+        window.open('https://wa.me/918072331337', '_blank');
       } else {
         setError(data.message || 'Invalid OTP');
       }
@@ -78,18 +78,60 @@ function App() {
       {/* Popup Modal for Congratulations */}
       {showCongrats && (
         <div style={{
-          position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center'
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          width: '100vw', 
+          height: '100vh', 
+          background: 'rgba(0,0,0,0.5)', 
+          zIndex: 9999, 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center'
         }}>
           <div style={{
-            background: '#fff', borderRadius: 16, padding: '32px 24px', boxShadow: '0 4px 32px rgba(0,0,0,0.2)', textAlign: 'center', maxWidth: 350
+            background: '#fff', 
+            borderRadius: 16, 
+            padding: '32px 24px', 
+            boxShadow: '0 4px 32px rgba(0,0,0,0.2)', 
+            textAlign: 'center', 
+            maxWidth: '400px',
+            margin: '20px',
+            lineHeight: '1.5'
           }}>
-            <h2 style={{ color: '#0a1a4f', marginBottom: 16 }}>Congratulations!</h2>
-            <div style={{ fontSize: 18, marginBottom: 24 }}>
-              congratulation you have been selected for an exclusive offer from chera home junction.
-            </div>
+            {/* explicitly set a visible text color */}
+            <h2 style={{ 
+              color: '#000',        // ← ensure this is a dark color
+              marginBottom: 16, 
+              fontSize: '24px',
+              fontWeight: 'bold'
+            }}>
+              Congratulations! Your exclusive offer from Chera Home Junction will be delivered to your WhatsApp shortly!
+            </h2>
+            {/* <div style={{ 
+              fontSize: '18px', 
+              marginBottom: 24,
+              color: '#333',
+              lineHeight: '1.6'
+            }}>
+              Your exclusive offer from Chera Home Junction will be delivered to your WhatsApp shortly!
+            </div> */}
             <button onClick={() => setShowCongrats(false)} style={{
-              background: '#0a1a4f', color: '#fff', border: 'none', borderRadius: 8, padding: '10px 24px', fontSize: 16, cursor: 'pointer'
-            }}>Close</button>
+              background: '#0a1a4f', 
+              color: '#fff', 
+              border: 'none', 
+              borderRadius: 8, 
+              padding: '12px 30px', 
+              fontSize: 16, 
+              cursor: 'pointer',
+              fontWeight: '500',
+              transition: 'background-color 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#1e3c72'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#0a1a4f'}
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
