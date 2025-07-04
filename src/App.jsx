@@ -28,7 +28,7 @@ function App() {
     setError('');
     setSuccess('');
     try {
-      const res = await fetch('http://38.242.230.58:5000/api/auth/send-otp', {
+      const res = await fetch('http://38.242.230.58/api/auth/send-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phoneNumber: mobile })
@@ -52,7 +52,7 @@ function App() {
     setError('');
     setSuccess('');
     try {
-      const res = await fetch('http://38.242.230.58:5000/api/auth/verify-otp', {
+      const res = await fetch('http://38.242.230.58/api/auth/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phoneNumber: mobile, otp })
