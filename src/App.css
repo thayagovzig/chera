@@ -227,6 +227,58 @@ buildingbody, html, #root, .chera-root {
   padding: 12px 12px 0 0;
 }
 
+/* Responsive Chera logo at top-right on desktop, top center above login on mobile */
+.responsive-logo {
+  width: 480px;
+  min-width: 320px;
+  max-width: 700px;
+  height: 160px;
+  aspect-ratio: unset;
+  border-radius: 32px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(2px);
+  object-fit: cover;
+  z-index: 10;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  mix-blend-mode: lighten;
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  left: unset;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .responsive-logo {
+    width: 220px;
+    min-width: 120px;
+    max-width: 320px;
+    height: 80px;
+    border-radius: 24px;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .responsive-logo {
+    left: 50% !important;
+    right: unset !important;
+    top: 24px !important;
+    transform: translateX(-50%) !important;
+    width: 32vw !important;
+    min-width: 50px !important;
+    max-width: 50vw !important;
+    height: 32px !important;
+    border-radius: 12px !important;
+  }
+  .chera-login-form-container {
+    margin-top: 50px !important;
+  }
+}
+
 @media (max-width: 600px) {
   .background-building,
   .man-yellow-bg,
